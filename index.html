@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKY | The SKY Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">SKY</div>
+      <nav class="main-nav">
+        <a href="#intro">Intro</a>
+        <a href="#about">About</a>
+        <a href="#shop">Shop</a>
+      </nav>
+      <button id="cartBtn" class="cart-btn" aria-label="Open cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  
+  <section id="intro" class="intro-section">
+    <div class="container intro-inner">
+      <div class="intro-text">
+        <h1>The SKY<br>Store</h1>
+        <p>Quality gadgets for the moderm shopper — delivered across Ghana.</p>
+        <a href="#shop" class="btn btn-primary">Shop Now</a>
+      </div>
+      <div class="intro-image" aria-hidden="true">
+               <div class="hero-placeholder"><img src="heroImage.png" alt="image of product"></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="about" class="about-section">
+    <div class="container">
+      <p>The SKY Store is an online store for everyday gadgets we believe every "Gen-Z" should have today. We've got mobile phones, laptops, smartwatches and other gadgets. Explore all our collections and choose the ones that suit you.</p>
+    </div>
+  </section>
+
+  
+  <section id="shop" class="shop-section">
+    <div class="container">
+      <h2>Our Gadgets</h2>
+      <div class="product-grid" id="productGrid">
+
+        <article class="product-card" data-id="1">
+          <div class=""><img src="Samsung Tv.png" alt="Samsung TV"></div>
+          <h3 class="product-name">Samsung TV</h3>
+          <p class="product-price" data-price-for="1">₵4,500.00</p>
+          <button class="add-btn" data-id="1">Add to Cart</button>
+        </article>
+
+        <article class="product-card" data-id="2">
+          <div class=""><img src="Pixel 4A.png" alt="Pixel 4A"></div>
+          <h3 class="product-name">Pixel 4A</h3>
+          <p class="product-price" data-price-for="2">₵2,500.00</p>
+          <button class="add-btn" data-id="2">Add to Cart</button>
+        </article>
+
+        <article class="product-card" data-id="3">
+          <div class=""><img src="PS5.png" alt="PS5"></div>
+          <h3 class="product-name">PS5</h3>
+          <p class="product-price" data-price-for="3">₵6,500.00</p>
+          <button class="add-btn" data-id="3">Add to Cart</button>
+        </article>
+
+        <article class="product-card" data-id="4">
+          <div class=""><img src="macbook Air.png" alt="MacBook Air"></div>
+          <h3 class="product-name">MacBook Air</h3>
+          <p class="product-price" data-price-for="4">₵8,000.00</p>
+          <button class="add-btn" data-id="4">Add to Cart</button>
+        </article>
+
+        <article class="product-card" data-id="5">
+          <div class=""><img src="Apple watch.png" alt="Apple Watch"></div>
+          <h3 class="product-name">Apple Watch</h3>
+          <p class="product-price" data-price-for="5">₵1,700.00</p>
+          <button class="add-btn" data-id="5">Add to Cart</button>
+        </article>
+
+        <article class="product-card" data-id="6">
+          <div class=""><img src="Air pods.png" alt="AirPods"></div>
+          <h3 class="product-name">Air Pods</h3>
+          <p class="product-price" data-price-for="6">₵350.00</p>
+          <button class="add-btn" data-id="6">Add to Cart</button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+ 
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="logo">SKY</div>
+      <p>Designed & Crafted by Steve</p>
+    </div>
+  </footer>
+
+  
+  <div id="cartOverlay" class="overlay hidden">
+    <div id="cartModal" class="modal cart-modal" role="dialog" aria-modal="true" aria-label="Shopping cart">
+      <button id="closeCartBtn" class="close-btn" aria-label="Close cart">&times;</button>
+      <h2>Your Cart</h2>
+
+     
+      <div class="cart-items-section">
+        <table class="cart-table">
+          <thead>
+            <tr><th>S/N</th><th>Item</th><th>Price</th><th>Quantity</th><th></th></tr>
+          </thead>
+          <tbody id="cartTableBody"></tbody>
+        </table>
+        <p id="emptyCartMsg" class="empty-msg hidden">Your cart is empty.</p>
+      </div>
+
+     
+      <div class="user-details-section">
+        <div class="form-group">
+          <input type="text" id="userName" placeholder="Your Name">
+          <span class="error-msg" id="nameError"></span>
+        </div>
+        <div class="form-group">
+          <input type="email" id="userEmail" placeholder="Your Email">
+          <span class="error-msg" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="userPhone" placeholder="Your Phone Number">
+          <span class="error-msg" id="phoneError"></span>
+        </div>
+      </div>
+
+     
+      <div class="total-section">
+        <p>Total Amount to be Paid</p>
+        <h3 id="totalAmount">₵0</h3>
+      </div>
+
+      
+      <div class="actions-section">
+        <button id="continueShoppingBtn" class="btn btn-secondary">Continue Shopping</button>
+        <button id="checkoutBtn" class="btn btn-primary">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div id="summaryOverlay" class="overlay hidden">
+    <div class="modal summary-modal" role="dialog" aria-modal="true" aria-label="Order summary">
+      <p id="summaryMessage" class="summary-message"></p>
+      <div class="checkmark">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+      </div>
+      <h3>Summary</h3>
+      <table class="summary-table">
+        <thead><tr><th>S/N</th><th>Item</th><th>Quantity</th></tr></thead>
+        <tbody id="summaryTableBody"></tbody>
+      </table>
+      <button id="summaryOkBtn" class="btn btn-primary">Ok</button>
+    </div>
+  </div>
+
+  
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
